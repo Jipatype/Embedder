@@ -1,6 +1,6 @@
 #!/bin/sh
 cd "$(dirname "$0")"
-extractor="/Users/anupap/MyFonttools/Font_emdedder/dist/extractor"
+extractor="PATH/TO/EXTRACTOR"
 file_output_folder="PATH/TO/OUTPUT_FOLDER"
 mkdir -p "$file_output_folder"
 for file in *.otf; do 
