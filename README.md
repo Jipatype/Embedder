@@ -3,7 +3,7 @@
 These tools is for use to embedding any file into the .otf/.ttf font file.
 
 - "embedder" is for embedding any file into the font file.
-- "extractor" is for extracting file in the font file that embedded by "embedder".
+- "extractor" is for extracting file from the font file that embedded by "embedder".
 
 # The tools need to install.
 
@@ -37,13 +37,28 @@ To embedding any file into the font file
 $ ./dist/embedder -i "path/to/input.otf" -o "path/to/output.otf" -m "path/to/embedding.txt"
 ```
 
+If we want to embedding the file into multiple fonts file at once, shell script is the answer.
+
+```sh
+#!/bin/sh
+embedder="/PATH/TO/EMBEDDER"
+font_input_folder="/PATH/TO/FONT_INPUT_FOLDER"
+file_embedding="/PATH/TO/FILE.txt"
+font_output_folder="/PATH/TO/FONT_OUTPU_FOLDER"
+mkdir -p "$font_output_folder"
+for file in "$font_input_folder/"*.otf; do
+    file_name=$(basename -a $file);
+    "$embedder" -i "$file" -o "$font_output_folder/$file_name" -m "$file_embedding"
+done
+```
+
 To extracting file in the font file that embedded by "embedder".
 
 ```sh
 $ ./dist/extractor -i "path/to/input.otf" -o "path/to/output.txt"
 ```
 
-If we want to embedding the file into multiple fonts file at once, shell script is the answer.
+If we want to extracting file from the font file that embedded by "embedder". at once , shell script is the answer.
 
 ```sh
 #!/bin/sh
