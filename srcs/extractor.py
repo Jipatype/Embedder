@@ -15,7 +15,7 @@ if '-i' not in sys.argv or '-o' not in sys.argv:
     sys.exit()
 if '-tag' in sys.argv:
     tag = sys.argv[sys.argv.index('-tag') + 1]
-    if len(tag) > 4:
+    if len(tag) != 4:
         print('Custom tag must specified 4 characters only.')
         sys.exit()
 else:
