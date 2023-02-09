@@ -58,7 +58,7 @@ To extracting file in the font file that embedded by "embedder".
 $ ./dist/extractor -i "path/to/input.otf" -o "path/to/output.txt"
 ```
 
-If we want to extracting file from the font file that embedded by "embedder". at once , shell script is the answer.
+If we want to extracting file from the font file that embedded by "embedder" at once , shell script is the answer.
 
 ```sh
 #!/bin/sh
