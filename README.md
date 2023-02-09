@@ -27,7 +27,7 @@ $ pyinstaller ./srcs/embedder.py --onefile
 $ pyinstaller ./srcs/extractor.py --onefile
 ```
 
-The code will compile to under "dist" folder.
+The code will compile into under the "dist" folder.
 
 # How to use.
 
