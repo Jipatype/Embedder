@@ -62,13 +62,12 @@ If we want to extracting file from the font file that embedded by "embedder". at
 
 ```sh
 #!/bin/sh
-embedder="/PATH/TO/EMBEDDER"
+extractor="PATH/TO/EXTRACTOR"
 font_input_folder="/PATH/TO/FONT_INPUT_FOLDER"
-file_embedding="/PATH/TO/FILE.txt"
-font_output_folder="/PATH/TO/FONT_OUTPU_FOLDER"
-mkdir -p "$font_output_folder"
+file_output_folder="PATH/TO/OUTPUT_FOLDER"
+mkdir -p "$file_output_folder"
 for file in "$font_input_folder/"*.otf; do
-    file_name=$(basename -a $file);
-    "$embedder" -i "$file" -o "$font_output_folder/$file_name" -m "$file_embedding"
+    file_name $(basename -a $file)
+    "$extractor" -i "$file" -o "$file_output_folder/$file_name.txt"
 done
 ```
